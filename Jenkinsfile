@@ -37,7 +37,7 @@ stage('Start NGINX Load Balancer') {
         sh '''
         docker rm -f nginx-lb || true
 
-        docker run -d -p 80:80 --name nginx-lb --network lab-net nginx
+        docker run -d -p 8081:80 --name nginx-lb --network lab-net nginx
 
         sleep 5
 

@@ -37,9 +37,10 @@ pipeline {
 
                 docker run -d -p 80:80 --name nginx-lb nginx
 
-                sleep 2
+                sleep 8
 
                 docker cp nginx/default.conf nginx-lb:/etc/nginx/conf.d/default.conf
+                sleep 3
                 docker exec nginx-lb nginx -s reload
                 '''
             }
